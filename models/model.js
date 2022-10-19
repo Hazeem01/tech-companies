@@ -5,6 +5,10 @@ const dataSchema = new mongoose.Schema({
         required: true,
         type: String
     },
+    registrationNumber: {
+        required: false,
+        type: Number
+    },
     headOffice: {
         required: true,
         type: String
