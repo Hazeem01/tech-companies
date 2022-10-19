@@ -1,7 +1,7 @@
 {
   "name": "rest-api-express-mongo",
   "version": "1.0.0",
-  "description": "",
+  "description": "Just a simple API that implement CRUD endpoints",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -11,7 +11,7 @@
     "type": "git",
     "url": "https://github.com/Hazeem01/tech-companies"
   },
-  "author": "",
+  "author": "Hazeem",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^16.0.3",
