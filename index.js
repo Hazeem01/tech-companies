@@ -2,6 +2,7 @@ require('dotenv').config();
 
 const express = require('express');
 const mongoose = require('mongoose');
+const routes = require('./routes/routes');
 const mongoString = process.env.DATABASE_URL;
 
 mongoose.connect(mongoString);
@@ -22,10 +23,4 @@ app.listen(3000, () => {
     console.log(`Server Started at ${3000}`)
 })
 
-const routes = require('./routes/routes');
-
 app.use('/api', routes)
-
-const router = express.Router()
-
-module.exports = router;
