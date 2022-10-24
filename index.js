@@ -19,8 +19,9 @@ const app = express();
 
 app.use(express.json());
 
-app.listen(process.env.PORT || 3000, () => {
-    console.log(`Server Started at ${3000}`)
+const port = 3000;
+app.listen(port, () => {
+    console.log(`Server Started at ${port}`)
 })
 
-app.use('/api', routes)
+app.use('/', routes)
