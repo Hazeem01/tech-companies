@@ -4,9 +4,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const routes = require('./routes/routes');
 const mongoString = process.env.DATABASE_URL;
+const app = express();
 
 mongoose.connect(mongoString);
 const database = mongoose.connection;
+const port = 3000;
 
 database.on('error', (error) => {
     console.log(error)
@@ -15,12 +17,10 @@ database.on('error', (error) => {
 database.once('connected', () => {
     console.log('Database Connected');
 })
-const app = express();
 
 app.use(express.json());
 
-const port = 3000;
-app.listen(port, () => {
+app.listen(port, () =>{
     console.log(`Server Started at ${port}`)
 })
 

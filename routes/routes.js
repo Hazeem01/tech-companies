@@ -2,8 +2,25 @@ const express = require('express');
 const router = express.Router();
 const Model = require('../models/model');
 
+router.get('/', (req, res)=>{
+    res.send(
+        '<h1>Welcome to the Tech Companies DataBase</h1> <p><a href = https://tech-companies.herokuapp.com/getAll>Get All Data</a></p>'
+    )
+})
+
 //Post Method
 router.post('/post', async (req, res) => {
+    const {companyName, registrationNumber, headOffice, phone, email, website, numberOfEmployees} = req.body;
+    const data = new Model({
+        companyName, 
+        registrationNumber, 
+        headOffice, 
+        phone, 
+        email, 
+        website, 
+        numberOfEmployees
+    });
+    /*
     const data = new Model({
         companyName: req.body.companyName,
         registrationNumber: req.body.registrationNumber,
@@ -12,7 +29,7 @@ router.post('/post', async (req, res) => {
         email: req.body.email,
         website: req.body.website,
         numberOfEmployees: req.body.numberOfEmployees
-    })
+    })*/
 
     try {
         const dataToSave = await data.save();
