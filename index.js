@@ -8,7 +8,7 @@ const app = express();
 
 mongoose.connect(mongoString);
 const database = mongoose.connection;
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 database.on('error', (error) => {
     console.log(error)
@@ -20,8 +20,8 @@ database.once('connected', () => {
 
 app.use(express.json());
 
-app.listen(process.env.PORT || port, () => {
-    console.log(`Server Started at ${3000}`)
+app.listen(port, () => {
+    console.log(`Server Started at ${port}`)
 })
 
-app.use('/', routes)
+app.use('/api/tech-companies', routes)
