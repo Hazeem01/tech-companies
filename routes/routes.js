@@ -4,7 +4,7 @@ const controller = require('../controllers/controller')
 
 router.get('/', (req, res) => {
     res.send(
-        '<h1>Welcome to the Tech Companies DataBase</h1> <p><a href = https://tech-companies.herokuapp.com/getAll>Get All Data</a></p>'
+        '<h1>Welcome to the Tech Companies DataBase</h1> <p><a href = https://tech-companies.herokuapp.com/api/tech-companies/all>Get All Data</a></p>'
     )
 })
 
